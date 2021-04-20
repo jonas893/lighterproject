@@ -1,5 +1,5 @@
 {
-  "name": "api_mongodb",
+  "name": "server_mongodb",
   "version": "1.0.0",
   "description": "mongodb api",
   "main": "server.js",
