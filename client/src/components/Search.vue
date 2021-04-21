@@ -77,16 +77,15 @@ export default {
       this.$router.push({ path: "/", query: { id: this.searchId } });
     },
     searchLighter: function(id) {
-      var vm = this;
       axios
         .get(this.api_url + "/" + id)
-        .then(function(response) {
-          vm.lighterData = response.data;
-          vm.message = undefined;
+        .then((response) => {
+          this.lighterData = response.data;
+          this.message = undefined;
           console.log(response);
         })
-        .catch(function(error) {
-          vm.message = error;
+        .catch((error) => {
+          this.message = error;
           console.log(error);
         });
     },
