@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Lighter = require("../models/lighter.js");
 
-//GET all Lighter
+//GET ALL LIGHTER
 router.get("/", async (req, res) => {
   console.log("---- GET all Lighter ----");
   try {
@@ -14,19 +14,20 @@ router.get("/", async (req, res) => {
 });
 
 //GET LIGHTER BY ID
-router.get("/:id", getLighter, (req, res) => {
+router.get("/:id", getLighterByLighterId, (req, res) => {
   console.log("---- GET LIGHTER BY ID ----");
   res.send(res.lighter);
 });
 
 //POST NEW LIGHTER
-router.post("/", async (req, res) => {
+router.post("/", generateLighterId, async (req, res) => {
   console.log("---- POST NEW LIGHTER ----");
   const lighter = new Lighter({
     color: req.body.color,
-    id: req.body.id,
+    id: res.id,
     position: req.body.position,
   });
+
   try {
     const newLighter = await lighter.save();
     res.status(201).json(lighter);
@@ -35,7 +36,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-//POST MULTIPLE LIGHTERS
+//POST MULTIPLE LIGHTERS (DEV ONLY)
 router.post("/multiple", async (req, res) => {
   console.log("---- POST MULTIPLE LIGHTER ----");
   for (var i = 0; i < req.body.length; i++) {
@@ -56,7 +57,7 @@ router.post("/multiple", async (req, res) => {
 });
 
 //PATCH LIGHTER BY ID
-router.patch("/:id", getLighter, async (req, res) => {
+router.patch("/:id", getLighterByLighterId, async (req, res) => {
   console.log("---- PATCH LIGHTER BY ID ----");
   if (req.body.color != null) {
     res.lighter.color = req.body.color;
@@ -72,17 +73,34 @@ router.patch("/:id", getLighter, async (req, res) => {
   }
 });
 
-//GET lighter by Lighter ID and next()
-async function getLighter(req, res, next) {
+//GET LIGHTER BY LIGHTER ID AND NEXT()
+async function getLighterByLighterId(req, res, next) {
   try {
     lighter = await Lighter.findOne({ id: req.params.id });
     if (lighter == null) {
       return res.status(404).json({ message: "Cannot find Lighter" });
     }
   } catch (err) {
-    return res.status(404).json({ message: "Cannot find Lighter" });
+    return res.status(404).json({ message: err.message });
   }
   res.lighter = lighter;
+  next();
+}
+
+//GENERATE LIGHTER ID AND NEXT()
+async function generateLighterId(req, res, next) {
+  try {
+    const data = await Lighter.find();
+    var id = 1000;
+    for (var i = 0; i < data.length; i++) {
+      if (data[i].id >= id) {
+        id = data[i].id + 1;
+      }
+    }
+  } catch (err) {
+    return res.status(404).json({ message: err.message });
+  }
+  res.id = id;
   next();
 }
 
