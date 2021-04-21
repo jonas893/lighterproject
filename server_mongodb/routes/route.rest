@@ -1,7 +1,7 @@
 GET http://localhost:3000/lighter
 
 #####
-GET http://localhost:3000/lighter/2222
+GET http://localhost:3000/lighter/1000
 
 
 #####
@@ -9,66 +9,89 @@ POST http://localhost:3000/lighter
 Content-Type: application/json
 
 {
-"id": 3333,
-"color": "rot",
-"position": [{ "lat": 51.27818427945428,"lng": 6.768438962975089 }]
-}
-
-#####
-POST http://localhost:3000/lighter
-Content-Type: application/json
-
-{
-"id": 4444,
-"color": "blau",
-"position": []
+    "color": "red",
+    "position": [
+        {
+            "lat": 60.27818427945428,
+            "lng": 7.768438962975089
+        },
+        {
+            "lat": 53.05449384168956,
+            "lng": -1.7750044766218274
+        }
+    ]
 }
 
 #####
 POST http://localhost:3000/lighter/multiple
 Content-Type: application/json
 
-[{
-"id": 1111,
-"color": "rot",
-"position": [{ "lat": 60.953211110202, "lng": 10.29155825215448 },
-{ "lat": 30.57724799150817, "lng": 22.72518515108916 },
-{ "lat": 50.17724799150817, "lng": 22.12518515108916 }]
-},
-{
-"id": 2222,
-"color": "gelb",
-"position": [{ "lat": 60.6853211110202, "lng": 8.79155825215448 },
-{ "lat": 52.57724799150817, "lng": 18.72518515108916 }]
-}]
+[
+    {
+        "id": 2000,
+        "color": "blue",
+        "position": [
+            {
+                "lat": 60.953211110202,
+                "lng": 10.29155825215448
+            },
+            {
+                "lat": 50.57724799150817,
+                "lng": 40.72518515108916
+            },
+            {
+                "lat": 50.17724799150817,
+                "lng": 18.12518515108916
+            },
+            {
+                "lat": -20.575232,
+                "lng": -51.309490
+            }
+        ]
+    },
+    {
+        "id": 2001,
+        "color": "black",
+        "position": [
+            {
+                "lat": 60.6853211110202,
+                "lng": 8.79155825215448
+            },
+            {
+                "lat": 52.57724799150817,
+                "lng": 18.72518515108916
+            }
+        ]
+    }
+]
 
 #####
-PATCH http://localhost:3000/lighter/1111
+PATCH http://localhost:3000/lighter/1000
 Content-Type: application/json
 
 {
-"id": 1111,
-"color": "schwarz",
-"position": [
-{ "lat": 60.953211110202, "lng": 10.29155825215448 },
-{ "lat": 57.394797153949284, "lng": 36.32258239738784 },
-{ "lat": 48.078925051935165, "lng": 106.40113214808952 },
-{ "lat": 51.169566649405155, "lng": 31.914125336218717 },
-{ "lat": 30.57724799150817, "lng": 22.72518515108916 }
-]
+    "color": "red",
+    "position": [
+        {
+            "lat": 60.27818427945428,
+            "lng": 7.768438962975089
+        },
+        {
+            "lat": 53.05449384168956,
+            "lng": -1.7750044766218274
+        },
+        {
+            "lat": 60.078925051935165,
+            "lng": 106.40113214808952
+        },
+        {
+            "lat": 51.169566649405155,
+            "lng": 31.914125336218717
+        },
+        {
+            "lat": 30.57724799150817,
+            "lng": 22.72518515108916
+        }
+    ]
 }
-
-#####
-PATCH http://localhost:3000/lighter/4444
-Content-Type: application/json
-
-{
-"id": 4444,
-"color": "pink",
-"position": [
-{ "lat": 60.953211110202, "lng": 10.29155825215448 },
-{"lat": 50.1994537, "lng": 22.0106201}
-]
-}
-
 
