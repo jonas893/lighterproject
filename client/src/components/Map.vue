@@ -2,7 +2,7 @@
   <v-container align="center" fluid class="align-self-start">
     <v-row class="mt-2"
       ><v-col align="center" justify="center"
-        >Dein <strong> {{ lighterData.color }}es</strong> BIC Feuerzeug wurde
+        >Dein <strong> {{ lighterData.color }}</strong> BIC Feuerzeug wurde
         <strong>{{ lighterData.position.length }}</strong> mal gescannt und hat
         bereits über <strong>{{ distance }}</strong> km zurückgelegt. (ID:
         {{ lighterData.id }})</v-col
@@ -24,8 +24,14 @@
             v-for="marker in lighterData.position"
             :key="marker.id"
             :lat-lng="marker"
-          ></l-marker>
-          <l-polyline :lat-lngs="lighterData.position" /> </l-map></v-col
+            ><l-icon :iconAnchor="iconAnchor"
+              ><v-icon color="white">mdi-circle</v-icon></l-icon
+            ></l-marker
+          >
+          <l-polyline
+            :color="lighterData.color"
+            :lat-lngs="lighterData.position"
+          /> </l-map></v-col
     ></v-row>
     <v-row
       ><v-col align="center"
@@ -51,7 +57,7 @@ import Vue from "vue";
 import axios from "axios";
 import VueAxios from "vue-axios";
 
-import { LMap, LTileLayer, LMarker, LPolyline } from "vue2-leaflet";
+import { LMap, LTileLayer, LMarker, LPolyline, LIcon } from "vue2-leaflet";
 import { Icon } from "leaflet";
 
 import VueGeolocation from "vue-browser-geolocation";
@@ -78,18 +84,20 @@ export default {
     LTileLayer,
     LMarker,
     LPolyline,
+    LIcon,
   },
 
   data: function() {
     return {
       searchId: "",
+      distance: null,
+      message: undefined,
+      ownPosition: undefined,
       url:
         "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}.png",
       center: [47.31322, -1.319482],
       zoom: 2,
-      distance: null,
-      message: undefined,
-      ownPosition: undefined,
+      iconAnchor: [12, 12],
       leafletMapOptions: {
         closePopupOnClick: false,
         doubleClickZoom: "center",
