@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "1a8f1900-dd05-4eab-9b9b-d8bfabf8fb4b",
+		"name": "Lighter_REST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET LIGHTER",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/lighter",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"lighter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET LIGHTER BY LIGHTER ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/lighter/3333",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"lighter",
+						"3333"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST LIGHTER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\": 1111,\r\n\"color\": \"rot\",\r\n\"position\": [{ \"lat\": 51.27818427945428,\"lng\": 6.768438962975089 }]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/lighter",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"lighter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST MULTIPLE LIGHTER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\r\n\"id\": 2222,\r\n\"color\": \"rot\",\r\n\"position\": [{ \"lat\": 60.953211110202, \"lng\": 10.29155825215448 },\r\n{ \"lat\": 30.57724799150817, \"lng\": 22.72518515108916 },\r\n{ \"lat\": 50.17724799150817, \"lng\": 22.12518515108916 }]\r\n},\r\n{\r\n\"id\": 3333,\r\n\"color\": \"gelb\",\r\n\"position\": [{ \"lat\": 60.6853211110202, \"lng\": 8.79155825215448 },\r\n{ \"lat\": 52.57724799150817, \"lng\": 18.72518515108916 }]\r\n}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/lighter/multiple",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"lighter",
+						"multiple"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH LIGHTER BY LIGHTER ID",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\": 1111,\r\n\"color\": \"schwarz\",\r\n\"position\": [\r\n{ \"lat\": 60.953211110202, \"lng\": 10.29155825215448 },\r\n{ \"lat\": 57.394797153949284, \"lng\": 36.32258239738784 },\r\n{ \"lat\": 48.078925051935165, \"lng\": 106.40113214808952 },\r\n{ \"lat\": 51.169566649405155, \"lng\": 31.914125336218717 },\r\n{ \"lat\": 30.57724799150817, \"lng\": 22.72518515108916 }\r\n]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/lighter/1111",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"lighter",
+						"1111"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
