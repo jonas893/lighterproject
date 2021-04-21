@@ -154,14 +154,13 @@ export default {
       });
     },
     saveLighterPosition() {
-      var vm = this;
       console.log(this.lighterData);
       axios
-        .patch(vm.api_url + "/" + vm.lighterData.id, vm.lighterData)
-        .then(function() {
-          vm.refresh();
+        .patch(this.api_url + "/" + this.lighterData.id, this.lighterData)
+        .then(() => {
+          this.refresh();
         })
-        .catch(function(error) {
+        .catch((error) => {
           console.log("Error! Could not reach the API. " + error);
         });
     },
