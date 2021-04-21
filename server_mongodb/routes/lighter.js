@@ -25,6 +25,7 @@ router.post("/", async (req, res) => {
   const lighter = new Lighter({
     color: req.body.color,
     id: req.body.id,
+    position: req.body.position,
   });
   try {
     const newLighter = await lighter.save();
