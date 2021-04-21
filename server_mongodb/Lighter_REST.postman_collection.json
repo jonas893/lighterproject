@@ -33,7 +33,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:3000/lighter/1111",
+					"raw": "http://127.0.0.1:3000/lighter/1000",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -44,7 +44,7 @@
 					"port": "3000",
 					"path": [
 						"lighter",
-						"1111"
+						"1000"
 					]
 				}
 			},
@@ -57,7 +57,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": 1111,\r\n    \"color\": \"red\",\r\n    \"position\": [\r\n        {\r\n            \"lat\": 60.27818427945428,\r\n            \"lng\": 7.768438962975089\r\n        },\r\n        {\r\n            \"lat\": 53.05449384168956,\r\n            \"lng\": -1.7750044766218274\r\n        }\r\n    ]\r\n}",
+					"raw": "{\r\n    \"color\": \"red\",\r\n    \"position\": [\r\n        {\r\n            \"lat\": 60.27818427945428,\r\n            \"lng\": 7.768438962975089\r\n        },\r\n        {\r\n            \"lat\": 53.05449384168956,\r\n            \"lng\": -1.7750044766218274\r\n        }\r\n    ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -82,13 +82,13 @@
 			"response": []
 		},
 		{
-			"name": "POST MULTIPLE LIGHTER",
+			"name": "POST MULTIPLE LIGHTER (DEV ONLY)",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "[\r\n    {\r\n        \"id\": 2222,\r\n        \"color\": \"blue\",\r\n        \"position\": [\r\n            {\r\n                \"lat\": 60.953211110202,\r\n                \"lng\": 10.29155825215448\r\n            },\r\n            {\r\n                \"lat\": 50.57724799150817,\r\n                \"lng\": 40.72518515108916\r\n            },\r\n            {\r\n                \"lat\": 50.17724799150817,\r\n                \"lng\": 18.12518515108916\r\n            },\r\n            {\r\n                \"lat\": -20.575232,\r\n                \"lng\": -51.309490\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"id\": 3333,\r\n        \"color\": \"black\",\r\n        \"position\": [\r\n            {\r\n                \"lat\": 60.6853211110202,\r\n                \"lng\": 8.79155825215448\r\n            },\r\n            {\r\n                \"lat\": 52.57724799150817,\r\n                \"lng\": 18.72518515108916\r\n            }\r\n        ]\r\n    }\r\n]",
+					"raw": "[\r\n    {\r\n        \"id\": 2000,\r\n        \"color\": \"blue\",\r\n        \"position\": [\r\n            {\r\n                \"lat\": 60.953211110202,\r\n                \"lng\": 10.29155825215448\r\n            },\r\n            {\r\n                \"lat\": 50.57724799150817,\r\n                \"lng\": 40.72518515108916\r\n            },\r\n            {\r\n                \"lat\": 50.17724799150817,\r\n                \"lng\": 18.12518515108916\r\n            },\r\n            {\r\n                \"lat\": -20.575232,\r\n                \"lng\": -51.309490\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"id\": 2001,\r\n        \"color\": \"black\",\r\n        \"position\": [\r\n            {\r\n                \"lat\": 60.6853211110202,\r\n                \"lng\": 8.79155825215448\r\n            },\r\n            {\r\n                \"lat\": 52.57724799150817,\r\n                \"lng\": 18.72518515108916\r\n            }\r\n        ]\r\n    }\r\n]",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -117,7 +117,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": 1111,\r\n    \"color\": \"red\",\r\n    \"position\": [\r\n        {\r\n            \"lat\": 60.27818427945428,\r\n            \"lng\": 7.768438962975089\r\n        },\r\n        {\r\n            \"lat\": 53.05449384168956,\r\n            \"lng\": -1.7750044766218274\r\n        },\r\n        {\r\n            \"lat\": 60.078925051935165,\r\n            \"lng\": 106.40113214808952\r\n        },\r\n        {\r\n            \"lat\": 51.169566649405155,\r\n            \"lng\": 31.914125336218717\r\n        },\r\n        {\r\n            \"lat\": 30.57724799150817,\r\n            \"lng\": 22.72518515108916\r\n        }\r\n    ]\r\n}",
+					"raw": "{\r\n    \"color\": \"red\",\r\n    \"position\": [\r\n        {\r\n            \"lat\": 60.27818427945428,\r\n            \"lng\": 7.768438962975089\r\n        },\r\n        {\r\n            \"lat\": 53.05449384168956,\r\n            \"lng\": -1.7750044766218274\r\n        },\r\n        {\r\n            \"lat\": 60.078925051935165,\r\n            \"lng\": 106.40113214808952\r\n        },\r\n        {\r\n            \"lat\": 51.169566649405155,\r\n            \"lng\": 31.914125336218717\r\n        },\r\n        {\r\n            \"lat\": 30.57724799150817,\r\n            \"lng\": 22.72518515108916\r\n        }\r\n    ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -125,7 +125,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/lighter/1111",
+					"raw": "http://localhost:3000/lighter/1000",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -133,7 +133,7 @@
 					"port": "3000",
 					"path": [
 						"lighter",
-						"1111"
+						"1000"
 					]
 				}
 			},
