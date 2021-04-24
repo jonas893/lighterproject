@@ -18,11 +18,6 @@
             SUCHEN
           </v-btn>
         </v-col>
-        <v-col class="col-auto"
-          ><v-btn elevation="2" disabled outlined x-large
-            ><v-icon> mdi-qrcode-scan</v-icon></v-btn
-          ></v-col
-        >
       </v-row>
 
       <Map
